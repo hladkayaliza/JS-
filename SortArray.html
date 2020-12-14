@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html  lang="en">
+    <head>
+    </head>
+
+    <body>
+
+
+    <script type="application/javascript">
+
+        // 1 - Написать функцию, которая получает на вход параметром массив чисел
+        // пример: [10, 2, 33, 1, 33, 4, 9, 22, 10] -> [1, 2, 4, 9, 10, 22, 33]
+
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
+        //Сразу оставлю здесь вопрос
+        //я сразу пыталась делать такое присвоение
+
+        // resultArray = array.forEach(function (value) {
+        // if (!resultArray.includes(value)) {
+        //     resultArray.push(value);
+        // }
+        // })
+
+        // и мне возвращалось undefined
+        //можешь рассказать, почему так происходило.. то есть в блоке массив заполнялся, но на выходе был undefined
+
+        function sortArray(array) {
+            var resultArray = [];
+
+            array.sort(function (a,b) {
+                return a-b;
+            })
+
+            array.forEach(function (value) {
+               if (!resultArray.includes(value)) {
+                   resultArray.push(value);
+               }
+            })
+
+            return resultArray;
+        }
+
+        console.log(sortArray([10, 2, 33, 1, 33, 4, 9, 22, 10]))
+    </script>
+    </body>
+</html>
+
+
+

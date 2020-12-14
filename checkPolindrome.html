@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+</head>
+
+<body>
+
+
+
+
+
+
+<script type="application/javascript">
+
+
+    // ЭТО ВАРИАНТ С REVERSE
+
+    // function checkPalindromeFirst(str) {
+    //     let array = Array.from(str);
+    //     console.log(array);
+    //     console.log(array.reverse());
+    //
+    //     if (array.toString() == array.reverse().toString())
+    //         return true;
+    //     else
+    //         return false;
+    // }
+    //
+    // console.log(checkPalindromeFirst('abcdedcba'));
+    // console.log(checkPalindromeFirst('abcded'));
+
+
+    function checkPalindromeSecond(str) {
+        let result = false;
+        let array = Array.from(str);
+        for (let i = 0;i <= array.length;i++) {
+            if (array[0] === array[array.length-1]) {
+                array.shift();
+                array.pop();
+                result = true;
+            }
+            else break;
+        }
+
+        return result;
+    }
+
+    console.log(checkPalindromeSecond('abcdedcba'));
+    console.log(checkPalindromeSecond('abcded'));
+
+
+</script>
+</body>
+</html>
+
+
+
