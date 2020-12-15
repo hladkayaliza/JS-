@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html  lang="en">
+    <head>
+    </head>
+
+    <body>
+
+
+    <script type="application/javascript">
+        const array = ['a', 'b', 'c', 'a', 'v', 'v', 'v'];
+
+        function makeArray(array) {
+            let resultObject = new Object();
+
+            array.forEach(item => {
+                let counter = 0;
+                array.forEach(elem => {
+                    if(item == elem) {
+                        counter++;
+                    }
+                })
+
+                Object.assign(resultObject, {[item]: counter})
+            })
+
+            return resultObject;
+        }
+
+        console.log(makeArray(array));
+    </script>
+    </body>
+</html>
+
+
+

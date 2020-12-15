@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+</head>
+
+<body>
+
+
+<script type="application/javascript">
+
+    function sumArray(array) {
+        var result = 0;
+        array.forEach(item => {
+            if (typeof (item) === "number")
+            result +=item;
+        });
+
+        return result;
+    }
+    console.log(sumArray([10, 2, 33, 1, 33, 4, 9, 22, 10]))
+
+    console.log(sumArray([10, 2, 33,'c', 1,'bfr', 33, 4, 9, 22, 10]))
+</script>
+</body>
+</html>
+
+
+
