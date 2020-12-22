@@ -1,59 +1,54 @@
 <!DOCTYPE html>
 <html  lang="en">
-<head>
-</head>
+    <head>
+    </head>
 
-<body>
+    <body>
 
 
-<script type="application/javascript">
+        <script type="application/javascript">
+            const users = [
+                {name: 'Ivan', age: 18},
+                {name: 'Petr', age: 58},
+                {name: 'Sidor', age: 10},
+                {name: 'Jon', age: 25},
+                {name: 'Val', age: 32},
+                {name: 'Nik', age: 48},
+                {name: 'Jack', age: 13},
+                {name: 'Bill', age: 8},
+            ];
 
-    const users = [
-        {name: 'Ivan', age: 18},
-        {name: 'Petr', age: 58},
-        {name: 'Sidor', age: 10},
-        {name: 'Jon', age: 25},
-        {name: 'Val', age: 32},
-        {name: 'Nik', age: 48},
-        {name: 'Jack', age: 13},
-        {name: 'Bill', age: 8},
+            const controlAge = 18;
 
-    ];
+            function sortUsers(array) {
+                var oldMan = [];
+                var jungMan =[];
+                array.forEach(item => {
+                    if (item.age >= controlAge)
+                        oldMan.push(item);
+                    else jungMan.push(item);
+                });
 
-    function sortUsers(array) {
-        var oldMan = [];
-        var jungMan =[];
-        users.forEach(item => {
-            if (item.age >= 18)
-                oldMan.push(item);
-            else jungMan.push(item);
-        });
+                return {jungMan, oldMan}
+            }
 
-        return {jungMan, oldMan}
-    }
+            function searchUsers(array) {
+                var searchItem = prompt("Enter your name", name);
+                var filteredArray = array.filter(item => item.name.toLowerCase() === searchItem.toLowerCase())
 
-    function searchUsers(array) {
-        let searchItem = prompt("Enter your name", name);
-        let result = [];
-        users.forEach(item => {
-            if (item.name.toLowerCase() == searchItem.toLowerCase())
-                result.push(item);
-        });
+                if (filteredArray.length > 0) {
+                    filteredArray.forEach(item => {
+                        alert(item.name + ' ' + item.age)
+                    });
+                }
+                else  alert("Error!")
+            }
 
-        if (result.length >0) {
-            result.forEach(item => {
-                alert(item.name + ' ' + item.age);
-            })
-        } else {
-            alert("Error!")
-        }
-    }
+            console.log(sortUsers(users));
+            searchUsers(users);
 
-    console.log(sortUsers(users));
-    searchUsers(users);
-
-</script>
-</body>
+        </script>
+    </body>
 </html>
 
 

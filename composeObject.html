@@ -10,20 +10,21 @@
         const array = ['a', 'b', 'c', 'a', 'v', 'v', 'v'];
 
         function makeArray(array) {
-            let resultObject = new Object();
 
-            array.forEach(item => {
+            return  array.reduce((res,item, index, arr) => {
                 let counter = 0;
+
                 array.forEach(elem => {
-                    if(item == elem) {
+                    if(item === elem) {
                         counter++;
                     }
                 })
 
-                Object.assign(resultObject, {[item]: counter})
-            })
+                res = {
+                    [item]:counter
+                };
 
-            return resultObject;
+            }, 0)
         }
 
         console.log(makeArray(array));

@@ -24,23 +24,20 @@
         // и мне возвращалось undefined
         //можешь рассказать, почему так происходило.. то есть в блоке массив заполнялся, но на выходе был undefined
 
-        function sortArray(array) {
-            var resultArray = [];
+        const array = [10, 2, 33, 1, 33, 4, 9, 22, 10];
 
-            array.sort(function (a,b) {
+        function sortArray(array) {
+            return array.reduce((com, item) => {
+                if (!com.includes(item))
+                    com.push(item);
+                return com;
+            }, []).sort(function (a,b) {
                 return a-b;
             })
-
-            array.forEach(function (value) {
-               if (!resultArray.includes(value)) {
-                   resultArray.push(value);
-               }
-            })
-
-            return resultArray;
         }
 
-        console.log(sortArray([10, 2, 33, 1, 33, 4, 9, 22, 10]))
+        console.log(array)
+        console.log(sortArray(array))
     </script>
     </body>
 </html>

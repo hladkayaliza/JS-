@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+</head>
+
+<body>
+
+
+
+
+
+
+<script type="application/javascript">
+
+    const formatted = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    function showClock() {
+        const date = new Date();
+
+        console.log(date.getHours() +':'+ date.getMinutes()+':'+ date.getSeconds())
+        // console.log('hh:mm:ss')
+    }
+
+
+    setInterval(showClock, 5000)
+
+</script>
+</body>
+</html>
+
+
+

@@ -30,23 +30,41 @@
     // console.log(checkPalindromeFirst('abcded'));
 
 
+    // function checkPalindromeSecond(str) {
+    //     let result = false;
+    //     let array = Array.from(str);
+    //     for (let i = 0;i <= array.length;i++) {
+    //         if (array[0] === array[array.length-1]) {
+    //             array.shift();
+    //             array.pop();
+    //             result = true;
+    //         }
+    //         else break;
+    //     }
+    //
+    //     return result;
+    // }
+
     function checkPalindromeSecond(str) {
-        let result = false;
-        let array = Array.from(str);
-        for (let i = 0;i <= array.length;i++) {
-            if (array[0] === array[array.length-1]) {
-                array.shift();
-                array.pop();
+        var result = false;
+        while (str.length > 1) {
+            if (str.charAt(0) === str.charAt(str.length - 1)) {
+                str = str.slice(1,length - 1);
                 result = true;
             }
-            else break;
+            else {
+                result = false;
+                break
+            }
         }
 
         return result;
     }
 
-    console.log(checkPalindromeSecond('abcdedcba'));
-    console.log(checkPalindromeSecond('abcded'));
+
+    console.log(checkPalindromeSecond('abcdefghjklmnoprstsrponmlkjhgfedcba'));
+    console.log(checkPalindromeSecond('somemeninterpretninememos'));
+    console.log(checkPalindromeSecond('abcdsjhdjdjdhsjda'));
 
 
 </script>
