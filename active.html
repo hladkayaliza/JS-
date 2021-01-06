@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <style>
+        .invalid {
+            border: 4px solid red;
+        }
+    </style>
+</head>
+
+<body>
+<!--<time class="clock"></time>-->
+<!--<button class="start">Start</button>-->
+<!--<button class="stop">Stop</button>-->
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+
+<form name="form">
+    <fieldset>
+        <legend>Name</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+    </fieldset>
+
+    <fieldset>
+        <legend>Age</legend>
+        <label for="age">Age:</label>
+        <input type="number" id="age" required>
+    </fieldset>
+
+    <div>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </div>
+</form>
+
+<script type="text/javascript">
+    const form = document.querySelector('[name="form"]');
+    const name = document.getElementById('name');
+    const age = document.getElementById('age');
+
+    age.addEventListener('input', function(evt) {
+        if (age.value < 18 || age.value > 99) {
+            age.parentElement.classList.add("invalid")
+        } else {
+            age.parentElement.classList.remove("invalid");
+        }
+    });
+
+    name.addEventListener('input', function(evt) {
+        if(name.value.length < 10 || name.value.length > 30) {
+            name.parentElement.classList.add("invalid");
+        } else {
+            name.parentElement.classList.remove("invalid")
+        }
+    })
+
+    form.addEventListener('submit', function(evt) {
+       evt.preventDefault();
+       if (!this.getElementsByClassName("invalid"))
+           alert(name.value+" "+age.value)
+    });
+
+    // const clock = document.querySelector('.clock');
+    // const startBtn = document.querySelector('.start');
+    // const stopBtn = document.querySelector('.stop');
+    // let descriptor;
+    //
+    //
+    // function displayTime() {
+    //     const date = new Date();
+    //     clock.innerHTML = `${date.getHours()}  ${date.getMinutes()}`;
+    // }
+    //
+    // startBtn.addEventListener('click', function (){
+    //     descriptor = setInterval(displayTime, 1000);
+    // });
+    //
+    // stopBtn.addEventListener('click', function() {
+    //     clearInterval(descriptor);
+    // });
+</script>
+
+</body>
+</html>
+
+
+
